@@ -18,6 +18,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <h1>test another component</h1>
+      <h1>{1 + 5} - {"ankara".toUpperCase()}</h1>
+      
+
     </div>
   );
 }
