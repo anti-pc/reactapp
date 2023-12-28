@@ -1,17 +1,10 @@
-//import logo from './logo.svg';
-import './App.css';
-import User from "./components/User"
+import User from "./components/User";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="container">
-      <h1 className='header'>test another component</h1>
-      <h1 style={{color:"red"}}>{1 + 5} - {"ankara".toUpperCase()}</h1>
-      
-      <User></User>
-      <User></User>
-      <User></User>
-      <User></User>
+      <Navbar/>
 
     </div>
   );
