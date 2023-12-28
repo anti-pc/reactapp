@@ -4,9 +4,9 @@ import User from "./components/User"
 
 function App() {
   return (
-    <div className="App">
-      <h1>test another component</h1>
-      <h1>{1 + 5} - {"ankara".toUpperCase()}</h1>
+    <div className="container">
+      <h1 className='header'>test another component</h1>
+      <h1 style={{color:"red"}}>{1 + 5} - {"ankara".toUpperCase()}</h1>
       
       <User></User>
       <User></User>
