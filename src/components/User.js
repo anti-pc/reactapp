@@ -4,10 +4,12 @@ import React, { Component } from 'react'
   render() {
     return (
       <div>
-        <form>
-        <input type="text"></input>
-        <button>Gönder</button>
-        </form>
+        <ul>
+            <li>İsim : Aslıhan </li>
+            <li>Departman : Bilişim</li>
+            <li>Maaş : 5000 </li>
+
+        </ul>
       </div>
     )
   }
