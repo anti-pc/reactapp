@@ -3,26 +3,29 @@ import PropTypes from 'prop-types'
 
 
  class User extends Component {
+  state = {
+    isVisible : false
+  }
   static defaultProps = {
     name : "Bilgi Yok",
     salary : "Bilgi Yok",
     department : "Bilgi Yok"
   }
 
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      test : "Test"
-    }
-  }
+  //   this.state = {
+  //     isVisible : false
+  //   }
+  //}
 
   render() {
     
     //Destructing
     // <li>İsim : {this.props.name} </li>  --> <li>İsim : {name} </li>
     const {name,department,salary} = this.props;
-
+    const {isVisible} = this.state;
     return (
       <div className='col-md-8 mb-4'>
         <div className='card'>
@@ -31,11 +34,13 @@ import PropTypes from 'prop-types'
             <i className='far fa-trash-alt' style={{cursor:"pointer"}}></i>
           </div>
 
-          <div className='card-body'>
-            <p className='card-text'><i class="fa-solid fa-building"></i> Departman : {department}</p>
-            <p className='card-text'><i class="fa-solid fa-hand-holding-dollar"></i> Maaş : {salary}</p>            
-            <p>{this.state.test}</p>
-          </div>
+          {
+            isVisible ? 
+            <div className='card-body'>
+              <p className='card-text'><i class="fa-solid fa-building"></i> Departman : {department}</p>
+              <p className='card-text'><i class="fa-solid fa-hand-holding-dollar"></i> Maaş : {salary}</p>
+            </div> : null
+          }
         </div>
       </div>
     )
