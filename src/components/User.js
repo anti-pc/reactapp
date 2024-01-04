@@ -9,6 +9,14 @@ import PropTypes from 'prop-types'
     department : "Bilgi Yok"
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      test : "Test"
+    }
+  }
+
   render() {
     
     //Destructing
@@ -26,7 +34,7 @@ import PropTypes from 'prop-types'
           <div className='card-body'>
             <p className='card-text'><i class="fa-solid fa-building"></i> Departman : {department}</p>
             <p className='card-text'><i class="fa-solid fa-hand-holding-dollar"></i> Maaş : {salary}</p>            
-
+            <p>{this.state.test}</p>
           </div>
         </div>
       </div>
