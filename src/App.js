@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="container">
       <Navbar title = "User App" altTitle = "Another Title" />
+      <Navbar altTitle = "Another Title" />
       <hr/>
 
       <User
@@ -18,6 +19,11 @@ function App() {
       name = "Oktay"
       salary = "4000"
       department = "Bilişim"
+      />
+
+      <User
+      name = "Bilgi"
+      department = "Eğitim"
       />
     </div>
   );
