@@ -3,6 +3,12 @@ import PropTypes from 'prop-types'
 
 
  class User extends Component {
+  static defaultProps = {
+    name : "Bilgi Yok",
+    salary : "Bilgi Yok",
+    department : "Bilgi Yok"
+  }
+
   render() {
     
     //Destructing
@@ -12,20 +18,14 @@ import PropTypes from 'prop-types'
     return (
       <div>
         <ul>
-            <li>İsim : {name} </li> 
-            <li>Departman : {department} </li>
-            <li>Maaş : {salary} </li>
+            <li><i class="fa-regular fa-face-smile"></i> İsim : {name} </li> 
+            <li><i class="fa-solid fa-building"></i> Departman : {department} </li>
+            <li><i class="fa-solid fa-hand-holding-dollar"></i>Maaş : {salary} </li>
 
         </ul>
       </div>
     )
   }
-}
-
-User.defaultProps = {
-  name : "Bilgi Yok",
-  salary : "Bilgi Yok",
-  department : "Bilgi Yok"
 }
 
 User.propTypes = {

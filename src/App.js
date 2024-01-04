@@ -10,10 +10,10 @@ function App() {
       <hr/>
 
       <User
-      name = "Aslıhan"
+      name = "Aslıhan" 
       salary = "5000"
       department = "Bilişim"
-      />
+      /> 
 
       <User
       name = "Oktay"
