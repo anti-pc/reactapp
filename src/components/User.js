@@ -35,7 +35,7 @@ import PropTypes from 'prop-types'
       <div className='col-md-8 mb-4'>
         <div className='card'>
           <div className='card-header d-flex justify-content-between'>
-            <h4 className='d-inline' onClick={this.onClickEvent}>{name}</h4>
+            <h4 className='d-inline' onClick={this.onClickEvent.bind(this)}>{name}</h4>
             <i className='far fa-trash-alt' style={{cursor:"pointer"}}></i>
           </div>
 
