@@ -12,11 +12,8 @@ import PropTypes from 'prop-types'
     department : "Bilgi Yok"
   }
 
-  constructor(props){
-    super(props);
-    this.onClickEvent = this.onClickEvent.bind(this);
-  }
-  onClickEvent(e){
+
+  onClickEvent = (e) => {
     console.log(e.target);
     console.log("test");
   }
