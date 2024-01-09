@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import User from "./components/User";
+import AddUser from "./components/AddUser";
 import Users from "./components/Users";
 import Navbar from "./components/Navbar";
 
@@ -12,6 +12,7 @@ class App extends Component {
         <Navbar title = "User App" altTitle = "Another Title" />
         <hr/>
 
+        <AddUser />
         <Users />
       </div>
     )

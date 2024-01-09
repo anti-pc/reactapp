@@ -53,7 +53,7 @@ import UserConsumer from '../context'
                   isVisible ? 
                   <div className='card-body'>
                     <p className='card-text'><i className="fa-solid fa-building"></i> Departman : {department}</p>
-                    <p className='card-text'><i className="fa-solid fa-hand-holding-dollar"></i> Maaş : {salary}</p>
+                    <p className='card-text'><i className="fa-solid fa-hand-holding-dollar"></i> Maaş : {salary}</p>    
                   </div> : null
                 }
               </div>
