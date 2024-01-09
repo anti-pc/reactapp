@@ -21,6 +21,11 @@ import PropTypes from 'prop-types'
     })
   }
 
+  onDeleteUser = (e) => {
+    const{id,deleteUser} = this.props;
+    deleteUser(id);
+  }
+
   render() {
     
     //Destructing
@@ -32,7 +37,7 @@ import PropTypes from 'prop-types'
         <div className='card'>
           <div className='card-header d-flex justify-content-between'>
             <h4 className='d-inline' onClick={this.onClickEvent}>{name}</h4>
-            <i className='far fa-trash-alt' style={{cursor:"pointer"}}></i>
+            <i onClick={this.onDeleteUser} className='far fa-trash-alt' style={{cursor:"pointer"}}></i>
           </div>
 
           {
@@ -54,7 +59,8 @@ import PropTypes from 'prop-types'
 User.propTypes = {
   name : PropTypes.string.isRequired,
   salary : PropTypes.string.isRequired,
-  department : PropTypes.string.isRequired
+  department : PropTypes.string.isRequired,
+  deleteUser : PropTypes.func.isRequired
 }
 
 export default User;
