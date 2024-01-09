@@ -1,32 +1,43 @@
+import React, { Component } from 'react'
 import User from "./components/User";
+import Users from "./components/Users";
 import Navbar from "./components/Navbar";
 
-function App() {
+class App extends Component {
+  state = {
+    users: [
+      {
+        id:1,
+        name:"Başak",
+        salary:"5000",
+        department:"Satış"
+      },
+      {
+        id:2,
+        name:"Oktay",
+        salary:"4000",
+        department:"Bilişim"
+      },
+      {
+        id:3,
+        name:"Bilgi",
+        salary:"6000",
+        department:"Üretim"
+      },
+    ]
+  }
 
-  return (
-    <div className="container">
-      <Navbar title = "User App" altTitle = "Another Title" />
-      <Navbar altTitle = "Another Title" />
-      <hr/>
 
-      <User
-      name = "Aslıhan" 
-      salary = "5000"
-      department = "Bilişim"
-      /> 
+  render() {
+    return (
+      <div className="container">
+        <Navbar title = "User App" altTitle = "Another Title" />
+        <hr/>
 
-      <User
-      name = "Oktay"
-      salary = "4000"
-      department = "Bilişim"
-      />
-
-      <User
-      name = "Bilgi"
-      department = "Eğitim"
-      />
-    </div>
-  );
+        <Users users = {this.state.users}/>
+      </div>
+    )
+  }
 }
 
 export default App;
