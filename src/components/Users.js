@@ -1,40 +1,59 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import User from "./User";
+import UserConsumer from '../context'
 
 
 class Users extends Component {
   render() {
     
-    const {users,deleteUser} = this.props;
-    console.log(users);
+    return(
+        <UserConsumer>
+            {
+                value => {
+                    const {users} = value;
 
-
-    return (
-      <div className='container'>
-        {
-            users.map(user => {
-                return (
-                    <User 
-                        key = {user.id}
-                        id = {user.id}
-                        name = {user.name}
-                        salary = {user.salary}
-                        department = {user.department}
-                        deleteUser = {deleteUser}
-                    />
-                )
-            })
-        }
-        
-      </div>
+                        return (
+                          <div className='container'>
+                            {
+                                users.map(user => {
+                                    return (
+                                        <User 
+                                            key = {user.id}
+                                            id = {user.id}
+                                            name = {user.name}
+                                            salary = {user.salary}
+                                            department = {user.department}
+                                        />
+                                    )
+                                })
+                            }
+                            
+                          </div>
+                        )
+                    }
+            }
+        </UserConsumer>
     )
-  }
-}
 
-Users.propTypes = {
-    users: PropTypes.array.isRequired,
-    deleteUser: PropTypes.func.isRequired
+    // return (
+    //   <div className='container'>
+    //     {
+    //         users.map(user => {
+    //             return (
+    //                 <User 
+    //                     key = {user.id}
+    //                     id = {user.id}
+    //                     name = {user.name}
+    //                     salary = {user.salary}
+    //                     department = {user.department}
+    //                 />
+    //             )
+    //         })
+    //     }
+        
+    //   </div>
+    // )
+  }
 }
 
 export default Users;

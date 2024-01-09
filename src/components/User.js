@@ -22,14 +22,13 @@ import PropTypes from 'prop-types'
   }
 
   onDeleteUser = (e) => {
-    const{id,deleteUser} = this.props;
-    deleteUser(id);
+    //const{id} = this.props;
+    // Consumer dispatch
   }
 
   render() {
     
-    //Destructing
-    // <li>İsim : {this.props.name} </li>  --> <li>İsim : {name} </li>
+
     const {name,department,salary} = this.props;
     const {isVisible} = this.state;
     return (
@@ -54,13 +53,10 @@ import PropTypes from 'prop-types'
 }
 
 
-
-
 User.propTypes = {
   name : PropTypes.string.isRequired,
   salary : PropTypes.string.isRequired,
-  department : PropTypes.string.isRequired,
-  deleteUser : PropTypes.func.isRequired
+  department : PropTypes.string.isRequired
 }
 
 export default User;
