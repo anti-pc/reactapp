@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import Navbar from "./Navbar";
+import User from "./User";
 
 
 class Users extends Component {
@@ -11,7 +11,18 @@ class Users extends Component {
 
     return (
       <div className='container'>
-
+        {
+            users.map(user => {
+                return (
+                    <User 
+                        key = {user.id}
+                        name = {user.name}
+                        salary = {user.salary}
+                        department = {user.department}
+                    />
+                )
+            })
+        }
         
       </div>
     )
