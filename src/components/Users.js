@@ -35,24 +35,6 @@ class Users extends Component {
         </UserConsumer>
     )
 
-    // return (
-    //   <div className='container'>
-    //     {
-    //         users.map(user => {
-    //             return (
-    //                 <User 
-    //                     key = {user.id}
-    //                     id = {user.id}
-    //                     name = {user.name}
-    //                     salary = {user.salary}
-    //                     department = {user.department}
-    //                 />
-    //             )
-    //         })
-    //     }
-        
-    //   </div>
-    // )
   }
 }
 
