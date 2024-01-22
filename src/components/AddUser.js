@@ -21,7 +21,10 @@ const Animation = pose.div({
 class AddUser extends Component {
 
     state = {
-        visible : true
+        visible: false,
+        name:"",
+        department:"",
+        salary:""
     }
 
     changeVisibility = (e) => {
@@ -30,9 +33,25 @@ class AddUser extends Component {
         })
     }
 
+    changeName = (e) => {
+        this.setState({
+            name : e.target.value
+        })
+    }
+    changeDepartment = (e) => {
+        this.setState({
+            department : e.target.value
+        })
+    }
+    changeSalary = (e) => {
+        this.setState({
+            salary : e.target.value
+        })
+    }
+
   render() {
 
-    const {visible} = this.state;
+    const {visible,name,department,salary} = this.state;
     return (
     <div className='container'>
         <div className='col-md-8 mb-4'>
@@ -56,6 +75,8 @@ class AddUser extends Component {
                                 id="id"
                                 placeholder="Enter Name"
                                 className='form-control'
+                                value={name}
+                                onChange={this.changeName}
                                 />
                             </div>
                             <div className='form-group'>
@@ -66,6 +87,8 @@ class AddUser extends Component {
                                 id="department"
                                 placeholder="Enter Department"
                                 className='form-control'
+                                value={department}
+                                onChange={this.changeDepartment}
                                 />
                             </div>
                             <div className='form-group'>
@@ -76,6 +99,8 @@ class AddUser extends Component {
                                 id="salary"
                                 placeholder="Enter Salary"
                                 className='form-control'
+                                value={salary}
+                                onChange={this.changeSalary}
                                 />
                             </div> 
                             <br/>   
