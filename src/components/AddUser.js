@@ -33,21 +33,27 @@ class AddUser extends Component {
         })
     }
 
-    changeName = (e) => {
+    changeInput = (e) => {
         this.setState({
-            name : e.target.value
+            [e.target.name] : e.target.value
         })
     }
-    changeDepartment = (e) => {
-        this.setState({
-            department : e.target.value
-        })
-    }
-    changeSalary = (e) => {
-        this.setState({
-            salary : e.target.value
-        })
-    }
+
+    // changeName = (e) => {
+    //     this.setState({
+    //         name : e.target.value
+    //     })
+    // }
+    // changeDepartment = (e) => {
+    //     this.setState({
+    //         department : e.target.value
+    //     })
+    // }
+    // changeSalary = (e) => {
+    //     this.setState({
+    //         salary : e.target.value
+    //     })
+    // }
 
   render() {
 
@@ -76,7 +82,7 @@ class AddUser extends Component {
                                 placeholder="Enter Name"
                                 className='form-control'
                                 value={name}
-                                onChange={this.changeName}
+                                onChange={this.changeInput}
                                 />
                             </div>
                             <div className='form-group'>
@@ -88,7 +94,7 @@ class AddUser extends Component {
                                 placeholder="Enter Department"
                                 className='form-control'
                                 value={department}
-                                onChange={this.changeDepartment}
+                                onChange={this.changeInput}
                                 />
                             </div>
                             <div className='form-group'>
@@ -100,7 +106,7 @@ class AddUser extends Component {
                                 placeholder="Enter Salary"
                                 className='form-control'
                                 value={salary}
-                                onChange={this.changeSalary}
+                                onChange={this.changeInput}
                                 />
                             </div> 
                             <br/>   
