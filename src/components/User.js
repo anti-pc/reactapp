@@ -29,6 +29,11 @@ import UserConsumer from '../context'
     dispatch({type: "DELETE_USER", payload:id});
   }
 
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
+  
+
   render() {
     
 
