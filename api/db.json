@@ -1,21 +1,28 @@
 {
-    "users" : [
-        {
-            "id" : "uniq1",
-            "name" : "Başak",
-            "salary" : "5000",
-            "department" : "Satış"
-        },
-        {
-            "id" : "uniq2",
-            "name" : "Oktay",
-            "salary" : "4000",
-            "department" : "Bilişim"
-        },
-        {
-            "id" : "uniq3",
-            "name" : "Bilgi",
-            "salary" : "6000",
-            "department" : "Üretim"
-        }]
+  "users": [
+    {
+      "id": "uniq1",
+      "name": "Başak",
+      "salary": "5000",
+      "department": "Satış"
+    },
+    {
+      "id": "uniq2",
+      "name": "Oktay",
+      "salary": "4000",
+      "department": "Bilişim"
+    },
+    {
+      "id": "uniq3",
+      "name": "Bilgi",
+      "salary": "6000",
+      "department": "Üretim"
+    },
+    {
+      "id": "32d0",
+      "name": "Aslı",
+      "department": "Pazarlama",
+      "salary": "7500"
+    }
+  ]
 }
