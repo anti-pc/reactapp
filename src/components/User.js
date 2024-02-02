@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import UserConsumer from '../context';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import UserConsumer from "../context";
 import axios from "axios";
 
 
- class User extends Component {
+
+class User extends Component {
   state = {
     isVisible : false
   }
@@ -13,36 +14,26 @@ import axios from "axios";
     salary : "Bilgi Yok",
     department : "Bilgi Yok"
   }
-
-
-  onClickEvent = (e) => {
+  
+  onClickEvent = (e) =>{
     
-    //console.log(e.target)
     this.setState({
       isVisible : !this.state.isVisible
     })
   }
-
   onDeleteUser = async (dispatch,e) => {
-    const{id} = this.props;
-    //Delete Request  - AltGr + ,,
+     const {id} = this.props;
+     // Delete Request
     await axios.delete(`http://localhost:3004/users/${id}`);
 
-    // Consumer dispatch
-    dispatch({type: "DELETE_USER", payload:id});
+    // Consumer Dispatch
+    dispatch({type : "DELETE_USER",payload:id});
   }
-
-  componentWillUnmount() {
-    console.log("componentWillUnmount");
-  }
-  
-
   render() {
-    
 
-    const {name,department,salary} = this.props;
+    // Destructing
+    const {id,name,department,salary} = this.props;
     const {isVisible} = this.state;
-
     return (
       <UserConsumer>
       {
@@ -50,31 +41,38 @@ import axios from "axios";
           const {dispatch} = value;
 
           return (
-            <div className='col-md-8 mb-4'>
-              <div className='card' style={isVisible ? {backgroundColor:"#4DC2D9",color:"#1C1C4C"}:null}>
-                <div className='card-header d-flex justify-content-between'>
-                  <h4 className='d-inline' onClick={this.onClickEvent}>{name}</h4>
-                  <i onClick={this.onDeleteUser.bind(this,dispatch)} className='far fa-trash-alt' style={{cursor:"pointer"}}></i>
+            <div className = "col-md-8 mb-4" >
+              <div className="card" style = {isVisible ? {backgroundColor : "#62848d",color : "white"} : null}>
+                <div className="card-header d-flex justify-content-between">
+                  <h4 className = "d-inline" onClick = {this.onClickEvent}>{name}</h4>
+                  
+                  <i onClick = {this.onDeleteUser.bind(this,dispatch)} className = "far fa-trash-alt" style = {{cursor : "pointer"}}></i>
+      
                 </div>
-
                 {
-                  isVisible ? 
-                  <div className='card-body'>
-                    <p className='card-text'><i className="fa-solid fa-building"></i> Departman : {department}</p>
-                    <p className='card-text'><i className="fa-solid fa-hand-holding-dollar"></i> Maaş : {salary}</p>    
+                  isVisible ? <div className="card-body">
+                
+                  <p className="card-text">Maaş : {salary}</p>
+                  <p className="card-text">Department : {department}</p>
+                    <a href = {`edit/${id}`} className = "btn btn-dark w-100"> Update User </a>
                   </div> : null
                 }
+                
               </div>
+             
             </div>
           )
 
+
         }
       }
-      </UserConsumer>
-    )
+    
+    
+    </UserConsumer>)
 
-  }
-}
+    
+         }
+       }
 
 
 User.propTypes = {
@@ -83,5 +81,4 @@ User.propTypes = {
   department : PropTypes.string.isRequired,
   id : PropTypes.string.isRequired
 }
-
 export default User;

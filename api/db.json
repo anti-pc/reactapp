@@ -19,10 +19,16 @@
       "department": "Üretim"
     },
     {
-      "id": "32d0",
       "name": "Aslı",
-      "department": "Pazarlama",
-      "salary": "7500"
+      "salary": "7590",
+      "department": "Satış",
+      "id": "32d0"
+    },
+    {
+      "name": "Mehmet",
+      "salary": "4000",
+      "department": "Gömülü Sistemler",
+      "id": "7f4e"
     }
   ]
 }

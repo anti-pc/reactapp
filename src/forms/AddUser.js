@@ -61,6 +61,9 @@ class AddUser extends Component {
         dispatch({type:"ADD_USER",payload:response.data});
 
         //console.log(newUser);
+        // Redirect
+        //this.props.history.push("/");
+        window.location.href = "/";
     }
 
   render() {
